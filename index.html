@@ -11,21 +11,21 @@
 body{background:radial-gradient(130% 90% at 50% -12%,#23262e 0%,#0B0C0F 58%);color:var(--ink);
 font-family:Manrope,system-ui,sans-serif;font-size:15px;line-height:1.5;padding:34px 26px 70px;max-width:1180px;margin:0 auto}
 .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+a{color:var(--amber2)}
 header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;border-bottom:1px solid var(--line);padding-bottom:20px}
 h1{font-size:30px;font-weight:800;letter-spacing:-.02em}
 h1 .o{color:var(--amber)}
-.sub{color:var(--ink2);margin-top:7px;font-size:14.5px;max-width:640px}
+.sub{color:var(--ink2);margin-top:7px;font-size:14.5px;max-width:660px}
 .live{font-size:12px;color:var(--green);display:flex;align-items:center;gap:7px;font-weight:600}
 .live .pulse{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(70,168,131,.6);animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(70,168,131,.5)}70%{box-shadow:0 0 0 9px rgba(70,168,131,0)}100%{box-shadow:0 0 0 0 rgba(70,168,131,0)}}
 .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;margin:24px 0}
 .kpi{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:15px;padding:15px 17px}
-.kpi .v{font-size:25px;font-weight:800;color:var(--amber2);letter-spacing:-.01em}
+.kpi .v{font-size:24px;font-weight:800;color:var(--amber2);letter-spacing:-.01em}
 .kpi .l{color:var(--ink2);font-size:12px;margin-top:4px}
 h2{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink3);margin:38px 0 16px;font-weight:700}
-/* topology */
 .topo{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.zone{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:15px;position:relative}
+.zone{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:15px}
 .zone h3{font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:4px}
 .zone .where{font-size:11px;color:var(--ink3);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
 .node{background:var(--panel2);border:1px solid var(--line2);border-radius:11px;padding:10px 12px;margin-bottom:9px}
@@ -39,9 +39,8 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink3
 .b-cloud{background:rgba(91,141,239,.16);color:var(--blue)}
 .dotc{width:9px;height:9px;border-radius:50%;display:inline-block}
 .c-home{background:var(--amber)} .c-gcp{background:var(--blue)} .c-run{background:var(--green)} .c-local{background:var(--violet)}
-/* flow */
-.flow{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-top:4px}
-.flowrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13.5px;padding:9px 0;border-bottom:1px dashed var(--line);}
+.flow{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.flowrow{display:flex;align-items:center;gap:11px;flex-wrap:wrap;font-size:13.5px;padding:9px 0;border-bottom:1px dashed var(--line)}
 .flowrow:last-child{border-bottom:none}
 .chip{background:var(--panel2);border:1px solid var(--line2);border-radius:9px;padding:7px 12px;font-weight:600;font-size:13px;white-space:nowrap}
 .chip.acc{border-color:var(--amber);color:var(--amber2)}
@@ -49,15 +48,25 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink3
 .chip.cl{border-color:var(--blue);color:#bcd2ff}
 .arr{color:var(--ink3);font-size:18px}
 .lbl{font-size:11.5px;color:var(--ink3);margin-right:auto}
-/* table */
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:0;overflow:hidden}
+.card .hd{padding:13px 16px;border-bottom:1px solid var(--line);font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.card .bd{padding:14px 16px}
+.shot{width:100%;display:block;border-bottom:1px solid var(--line)}
+.shotcap{padding:11px 16px;font-size:12px;color:var(--ink3)}
+.dep{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.dep:last-child{border-bottom:none}
+.dep .gpu{font-weight:700;color:#cfc6ff;min-width:96px}
+.dep .m{color:var(--ink2);font-size:12px}
+.kv{display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.kv:last-child{border:none} .kv .k{color:var(--ink3)} .kv .v{color:var(--ink);font-weight:600}
 table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:top}
 th{color:var(--ink3);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.07em;background:var(--bg2)}
 tr:last-child td{border-bottom:none}
-.tags{margin-top:4px}
 .tag{display:inline-block;font-size:11.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--ink2);margin:3px 5px 3px 0;background:var(--panel)}
 .foot{color:var(--ink3);font-size:12px;margin-top:34px;text-align:center}
-@media(max-width:920px){.kpis{grid-template-columns:repeat(2,1fr)}.topo{grid-template-columns:1fr 1fr}}
+@media(max-width:920px){.kpis{grid-template-columns:repeat(2,1fr)}.topo{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}}
 @media(max-width:560px){.topo{grid-template-columns:1fr}}
 </style></head>
 <body>
@@ -65,7 +74,7 @@ tr:last-child td{border-bottom:none}
 <header>
   <div>
     <h1><span class="o">◎</span> Карта инфраструктуры</h1>
-    <div class="sub">Голосовой ввод для русской речи + распределённый LLM-инференс. Где что развёрнуто, куда идут вычисления и как маршрутизируются запросы.</div>
+    <div class="sub">Голосовой ввод для русской речи + распределённый LLM-инференс на домашних GPU. Где что развёрнуто, куда идут вычисления и как балансируются запросы.</div>
   </div>
   <div class="live"><span class="pulse"></span>сервисы в проде</div>
 </header>
@@ -74,75 +83,97 @@ tr:last-child td{border-bottom:none}
   <div class="kpi"><div class="v">13</div><div class="l">сервисов в проде</div></div>
   <div class="kpi"><div class="v">4</div><div class="l">площадки развёртывания</div></div>
   <div class="kpi"><div class="v">2× GPU</div><div class="l">RTX 4060 + GTX 1660S</div></div>
-  <div class="kpi"><div class="v">LiteLLM</div><div class="l">балансировка + failover</div></div>
+  <div class="kpi"><div class="v">least-busy</div><div class="l">LiteLLM + failover</div></div>
   <div class="kpi"><div class="v">5</div><div class="l">AI-агентов оркестрации</div></div>
 </div>
 
 <h2>Где что стоит · карта по площадкам</h2>
 <div class="topo">
-
   <div class="zone">
     <h3><span class="dotc c-home"></span>Дом · GPU-кластер</h3>
-    <div class="where">локальные узлы · Tailscale</div>
-    <div class="node"><div class="n">LiteLLM Gateway <span class="badge b-up">live</span></div><div class="d">Роутер/балансировщик между GPU-узлами, ретрай при падении (failover), A/B локалка↔облако</div><div class="p mono">:4000 /ui</div></div>
-    <div class="node"><div class="n">GPU-узлы <span class="badge b-gpu">CUDA</span></div><div class="d">RTX 4060 8 ГБ + GTX 1660S 6 ГБ · LLM-инференс + транскрибация с диаризацией</div></div>
-    <div class="node"><div class="n">Prometheus + Grafana <span class="badge b-up">live</span></div><div class="d">Метрики throughput / latency / VRAM, дашборд lang-router</div><div class="p mono">:9090 · :3000</div></div>
+    <div class="where">Ollama-узлы · Tailscale-mesh</div>
+    <div class="node"><div class="n">RTX 4060 · 8 ГБ <span class="badge b-gpu">node</span></div><div class="d">Сильный узел: Qwen2.5-7B-instruct (Ollama)</div><div class="p mono">:11434</div></div>
+    <div class="node"><div class="n">GTX 1660S · 6 ГБ <span class="badge b-gpu">node</span></div><div class="d">Слабый узел: Qwen2.5-3B-instruct (Ollama)</div><div class="p mono">:11434</div></div>
+    <div class="node"><div class="n">LiteLLM Gateway <span class="badge b-up">live</span></div><div class="d">Балансировка least-busy между узлами + failover, A/B локалка↔облако</div><div class="p mono">:4000</div></div>
   </div>
-
   <div class="zone">
     <h3><span class="dotc c-home"></span>Своя речевая модель</h3>
     <div class="where">ASR · продакшн</div>
-    <div class="node"><div class="n">ASR «Поток» <span class="badge b-up">live</span></div><div class="d">Распознавание русской речи (имена, термины, англ. вперемешку). Звук → текст по защищённому каналу</div><div class="p mono">api.potok.now :9447</div></div>
-    <div class="node"><div class="n">Auth / аккаунты</div><div class="d">Вход через сайт, deep-link, история и лимиты слов на сервере</div></div>
-    <div class="node"><div class="n">Десктоп «Поток» <span class="badge b-gpu">Tauri</span></div><div class="d">Rust + React/TS, Windows/macOS. Хоткей → запись → ASR → вставка в активное поле</div></div>
+    <div class="node"><div class="n">ASR «Поток» <span class="badge b-up">live</span></div><div class="d">Распознавание русской речи (имена, термины, англ. вперемешку), звук→текст по защищённому каналу</div><div class="p mono">api.potok.now :9447</div></div>
+    <div class="node"><div class="n">Auth / аккаунты</div><div class="d">Вход через сайт, история и лимиты слов на сервере</div></div>
+    <div class="node"><div class="n">Десктоп «Поток» <span class="badge b-gpu">Tauri</span></div><div class="d">Rust + React/TS, Win/macOS · хоткей→запись→ASR→вставка</div></div>
   </div>
-
   <div class="zone">
     <h3><span class="dotc c-gcp"></span>Облако · Google Cloud</h3>
     <div class="where">Vertex AI + VM</div>
-    <div class="node"><div class="n">vertex-proxy <span class="badge b-cloud">cloud</span></div><div class="d">OpenAI-совместимый прокси → Gemini 3 Flash (Vertex AI)</div><div class="p mono">:8788</div></div>
-    <div class="node"><div class="n">Hermes-агент</div><div class="d">Локальный LLM Nous Hermes на VM, Telegram-управление</div></div>
-    <div class="node"><div class="n">BillionMail · VPN · RustDesk</div><div class="d">Self-hosted email-маркетинг, VPN-узел, relay удалённого доступа</div></div>
+    <div class="node"><div class="n">vertex-proxy <span class="badge b-cloud">cloud</span></div><div class="d">OpenAI-совместимый прокси → Gemini Flash (Vertex). Облачный fallback для роутера</div><div class="p mono">:8788</div></div>
+    <div class="node"><div class="n">Hermes-агент</div><div class="d">LLM Nous Hermes на VM, Telegram-управление</div></div>
+    <div class="node"><div class="n">BillionMail · VPN · RustDesk</div><div class="d">Self-hosted email, VPN-узел, relay удалённого доступа</div></div>
   </div>
-
   <div class="zone">
     <h3><span class="dotc c-run"></span>Serverless + оркестрация</h3>
     <div class="where">Cloud Run · локально</div>
-    <div class="node"><div class="n">transcribe-api <span class="badge b-cloud">cloud</span></div><div class="d">Облачная расшифровка аудио · Gemini 2.5 Flash через Vertex</div></div>
-    <div class="node"><div class="n">Zoom-планировщик · sheet2zoom</div><div class="d">Cloud Run + Firestore, cron-джобы автоматизации</div></div>
-    <div class="node"><div class="n">Paperclip <span class="badge b-up">live</span></div><div class="d">Оркестратор AI-компании: 5 агентов, Postgres, трекинг токенов/стоимости</div><div class="p mono">:3100</div></div>
+    <div class="node"><div class="n">transcribe-api <span class="badge b-cloud">cloud</span></div><div class="d">Облачная расшифровка аудио · Gemini Flash через Vertex</div></div>
+    <div class="node"><div class="n">Zoom-планировщик · sheet2zoom</div><div class="d">Cloud Run + Firestore, cron-джобы</div></div>
+    <div class="node"><div class="n">Paperclip <span class="badge b-up">live</span></div><div class="d">Оркестратор: 5 AI-агентов, Postgres, трекинг токенов/стоимости</div><div class="p mono">:3100</div></div>
   </div>
-
 </div>
 
-<h2>Куда идут запросы · маршрутизация</h2>
-<div class="flow">
-  <div class="flowrow"><span class="lbl">Диктовка (речь→текст)</span><span class="chip acc">Десктоп «Поток»</span><span class="arr">→</span><span class="chip acc">ASR :9447</span><span class="arr">→</span><span class="chip">текст в активное поле</span></div>
-  <div class="flowrow"><span class="lbl">LLM / text2text</span><span class="chip">приложение·агенты</span><span class="arr">→</span><span class="chip gpu">LiteLLM Gateway</span><span class="arr">→</span><span class="chip gpu">локальные GPU</span><span class="arr">⇄</span><span class="chip cl">облако Gemini</span><span class="lbl" style="margin:0 0 0 6px">A/B + failover</span></div>
-  <div class="flowrow"><span class="lbl">Метрики</span><span class="chip gpu">все узлы</span><span class="arr">→</span><span class="chip">Prometheus</span><span class="arr">→</span><span class="chip">Grafana · lang-router</span></div>
-  <div class="flowrow"><span class="lbl">Оркестрация</span><span class="chip">Paperclip · 5 агентов</span><span class="arr">→</span><span class="chip cl">LLM-роутер</span><span class="arr">→</span><span class="chip">задачи · токены · стоимость</span></div>
+<h2>LiteLLM · как распределяются запросы</h2>
+<div class="split">
+  <div class="card">
+    <div class="hd">Маршрутизация LLM <span class="badge b-up">health-checks on</span></div>
+    <div class="bd">
+      <div class="flow" style="border:none;padding:0">
+        <div class="flowrow"><span class="lbl">входящий запрос</span><span class="chip cl">клиент / агент</span><span class="arr">→</span><span class="chip acc">LiteLLM Gateway</span></div>
+        <div class="flowrow"><span class="lbl">least-busy →</span><span class="chip gpu">RTX 4060 · Qwen2.5-7B</span></div>
+        <div class="flowrow"><span class="lbl">least-busy →</span><span class="chip gpu">GTX 1660S · Qwen2.5-3B</span></div>
+        <div class="flowrow"><span class="lbl">fallback →</span><span class="chip cl">облако · Gemini (vertex-proxy)</span></div>
+      </div>
+      <div style="margin-top:14px">
+        <div class="dep"><span class="gpu">RTX 4060</span><span class="m">Qwen2.5-7B-instruct · id <code class="mono">ollama-4060</code></span></div>
+        <div class="dep"><span class="gpu">GTX 1660S</span><span class="m">Qwen2.5-3B-instruct · id <code class="mono">ollama-1660s</code></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="hd">Параметры роутера</div>
+    <div class="bd">
+      <div class="kv"><span class="k">Стратегия</span><span class="v">usage-based-routing-v2</span></div>
+      <div class="kv"><span class="k">Ретраи при падении</span><span class="v">2</span></div>
+      <div class="kv"><span class="k">Карантин узла (cooldown)</span><span class="v">30 c</span></div>
+      <div class="kv"><span class="k">Таймаут запроса</span><span class="v">120 c</span></div>
+      <div class="kv"><span class="k">Health-checks узлов</span><span class="v">каждые 60 c</span></div>
+      <div class="kv"><span class="k">Виртуальная модель</span><span class="v mono">chat</span></div>
+    </div>
+  </div>
+</div>
+
+<h2>Мониторинг · Grafana (дашборд lang-router)</h2>
+<div class="card">
+  <img class="shot" src="grafana-langrouter.png" alt="Grafana lang-router dashboard" loading="lazy">
+  <div class="shotcap">Реальный дашборд: пропускная «язык → узел», задержки p50/p95 по узлам, всего запросов, ошибки, VRAM и загрузка GPU по узлам. Источник — Prometheus (scrape узлов + nvidia-exporter). На снимке кластер в простое (нет трафика) — панели наполняются под нагрузкой.</div>
 </div>
 
 <h2>Реестр сервисов</h2>
 <table>
 <tr><th>Сервис</th><th>Площадка</th><th>Порт</th><th>Назначение</th></tr>
-<tr><td>LiteLLM Gateway</td><td><span class="dotc c-home"></span> Дом · GPU</td><td class="mono">4000</td><td>Маршрутизация/балансировка LLM между GPU-узлами, failover, A/B</td></tr>
-<tr><td>GPU-инференс</td><td><span class="dotc c-home"></span> Дом</td><td class="mono">—</td><td>RTX 4060 + GTX 1660S · LLM + транскрибация с диаризацией</td></tr>
-<tr><td>Grafana / Prometheus</td><td><span class="dotc c-home"></span> Дом</td><td class="mono">3000 / 9090</td><td>Мониторинг распределения нагрузки и GPU</td></tr>
+<tr><td>LiteLLM Gateway</td><td><span class="dotc c-home"></span> Дом</td><td class="mono">4000</td><td>Маршрутизация/балансировка LLM между GPU-узлами, failover, A/B</td></tr>
+<tr><td>Ollama · RTX 4060 / GTX 1660S</td><td><span class="dotc c-home"></span> Дом</td><td class="mono">11434</td><td>Qwen2.5-7B / Qwen2.5-3B (LLM-инференс)</td></tr>
+<tr><td>Grafana / Prometheus</td><td><span class="dotc c-home"></span> Дом</td><td class="mono">3000 / 9090</td><td>Мониторинг распределения, латентности, GPU/VRAM</td></tr>
 <tr><td>ASR «Поток»</td><td><span class="dotc c-home"></span> Прод</td><td class="mono">9447</td><td>Распознавание русской речи для диктовки</td></tr>
-<tr><td>vertex-proxy</td><td><span class="dotc c-gcp"></span> GCP VM</td><td class="mono">8788</td><td>Прокси к Gemini 3 Flash (Vertex AI)</td></tr>
-<tr><td>transcribe-api</td><td><span class="dotc c-run"></span> Cloud Run</td><td class="mono">443</td><td>Облачная расшифровка аудио (Gemini 2.5 Flash)</td></tr>
-<tr><td>Hermes-агент</td><td><span class="dotc c-gcp"></span> GCP VM</td><td class="mono">—</td><td>Локальный LLM Nous Hermes + Telegram</td></tr>
-<tr><td>BillionMail</td><td><span class="dotc c-gcp"></span> GCP VM</td><td class="mono">25/465</td><td>Self-hosted email-маркетинг</td></tr>
+<tr><td>vertex-proxy</td><td><span class="dotc c-gcp"></span> GCP VM</td><td class="mono">8788</td><td>Прокси к Gemini Flash (Vertex AI), облачный fallback</td></tr>
+<tr><td>transcribe-api</td><td><span class="dotc c-run"></span> Cloud Run</td><td class="mono">443</td><td>Облачная расшифровка аудио (Gemini Flash)</td></tr>
+<tr><td>Hermes · BillionMail · VPN · RustDesk</td><td><span class="dotc c-gcp"></span> GCP VM</td><td class="mono">—</td><td>LLM-агент, email-маркетинг, VPN, relay</td></tr>
 <tr><td>Zoom-планировщик / sheet2zoom</td><td><span class="dotc c-run"></span> Cloud Run</td><td class="mono">443</td><td>Автоматизация Zoom (Firestore, cron)</td></tr>
 <tr><td>Paperclip</td><td><span class="dotc c-local"></span> Локально</td><td class="mono">3100</td><td>Оркестратор AI-агентов (Postgres), трекинг токенов</td></tr>
 </table>
 
 <h2>Стек</h2>
-<div class="tags">
-<span class="tag">Rust</span><span class="tag">Tauri 2</span><span class="tag">React + TypeScript</span><span class="tag">Python</span><span class="tag">LiteLLM (роутер/балансировка)</span><span class="tag">CUDA · RTX 4060 / GTX 1660S</span><span class="tag">ASR (рус. речь)</span><span class="tag">диаризация</span><span class="tag">Vertex AI · Gemini 3/2.5 Flash</span><span class="tag">Nous Hermes</span><span class="tag">Google Cloud Run</span><span class="tag">Firestore · Postgres · SQLite</span><span class="tag">Prometheus + Grafana</span><span class="tag">Docker</span><span class="tag">Tailscale</span><span class="tag">мульти-агентная оркестрация</span>
+<div>
+<span class="tag">Rust</span><span class="tag">Tauri 2</span><span class="tag">React + TypeScript</span><span class="tag">Python</span><span class="tag">LiteLLM (роутер/балансировка)</span><span class="tag">Ollama</span><span class="tag">Qwen2.5 (7B/3B)</span><span class="tag">CUDA · RTX 4060 / GTX 1660S</span><span class="tag">ASR (рус. речь) + диаризация</span><span class="tag">Vertex AI · Gemini Flash</span><span class="tag">Nous Hermes</span><span class="tag">Google Cloud Run</span><span class="tag">Firestore · Postgres · SQLite</span><span class="tag">Prometheus + Grafana</span><span class="tag">Docker</span><span class="tag">Tailscale</span><span class="tag">мульти-агентная оркестрация</span>
 </div>
 
-<div class="foot">Карта инфраструктуры · обзор для презентации. Часть приватных дашбордов доступна внутри сети (Tailscale).</div>
+<div class="foot">Карта инфраструктуры · обзор для презентации. Live-дашборды (Grafana/LiteLLM) доступны внутри сети Tailscale.</div>
 
 </body></html>
